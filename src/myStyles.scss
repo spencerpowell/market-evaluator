@@ -1,0 +1,242 @@
+$mineshaft: #242424;
+$backgroundColor: $mineshaft;
+$alto: #d9d9d9;
+$fontColor: $alto;
+$fontStack: Helvetica, sans-serif;
+
+$dodgerBlue: #52A1FE;
+$dustyGray: #A6A0A0;
+$selectedBorder: $dodgerBlue;
+$unselectedBorder: $mineshaft;
+
+$fairPink: #FFECEB;
+$melon: #FCB9B6;
+
+$cinderella: #FCE3D9;
+$apricotPeach: #F9C0A9;
+
+$pearlLusta: #FBEADF;
+$rajah: #F8AD7C;
+
+$coconutCream: #F9F0DC;
+$goldenSand: #F6D27E;
+
+$bianca: #FAF9EB;
+$mindaro: #F3F679;
+
+$tahunaSands: #EDF3D3;
+$canary: #DCF764;
+
+$caper: #E0F0BC;
+$sulu: #C3F15B;
+
+$teaGreen: #DEF2CA;
+$conifer: #9EE458;
+
+$chromeWhite: #DBEFD1;
+$pastelGreen: #8FDF68;
+
+$blueRomance: #DCF8D8;
+$screaminGreen: #70F359;
+
+html {
+    background-color: $backgroundColor;
+    font: 100% $fontStack;
+    color: $fontColor;
+
+    #title {
+        text-align: center;
+        margin-bottom: 24px;
+        margin-top: 24px;
+    }
+
+    #prompt {
+        margin: 0 14% 14px 14%;
+        text-align: center;
+    }
+
+    #example {
+        margin: 0 23% 24px 23%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    #navigation {
+        text-align: center;
+        .btn {
+            padding: 7px 2% 7px 2%;
+            border-radius: 5px;
+            margin-left: 6px;
+            color: black;
+            text-decoration: none;
+            background-color: $alto;
+            border: 2px solid $dustyGray;
+        }
+    }
+
+    .chart-scale {
+        text-align: center;
+    }
+
+    .btn {
+        min-width: 44px;
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+    }
+
+    .btn-scale {
+        display: inline-block;
+        width: 4%;
+        margin-bottom: 12px;
+        font-size: 16px;
+        border: 2px solid $unselectedBorder;
+        border-radius: 50px;
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+        text-decoration: none;
+    }
+
+    #btn-scale-1 {
+        background-color: $fairPink;
+        &:hover {
+            background-color: $melon;
+        }
+        &:active {
+            background-color: $fairPink;
+        }
+        &:target {
+            background-color: $melon;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-2 {
+        background-color: $cinderella;
+        &:hover {
+            background-color: $apricotPeach;
+        }
+        &:active {
+            background-color: $cinderella;
+        }
+        &:target {
+            background-color: $apricotPeach;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-3 {
+        background-color: $pearlLusta;
+        &:hover {
+            background-color: $rajah;
+        }
+        &:active {
+            background-color: $pearlLusta;
+        }
+        &:target {
+            background-color: $rajah;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-4 {
+        background-color: $coconutCream;
+        &:hover {
+            background-color: $goldenSand;
+        }
+        &:active {
+            background-color: $coconutCream;
+        }
+        &:target {
+            background-color: $goldenSand;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-5 {
+        background-color: $bianca;
+        &:hover {
+            background-color: $mindaro;
+        }
+        &:active {
+            background-color: $bianca;
+        }
+        &:target {
+            background-color: $mindaro;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-6 {
+        background-color: $tahunaSands;
+        &:hover {
+            background-color: $canary;
+        }
+        &:active {
+            background-color: $tahunaSands;
+        }
+        &:target {
+            background-color: $canary;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-7 {
+        background-color: $caper;
+        &:hover {
+            background-color: $sulu;
+        }
+        &:active {
+            background-color: $caper;
+        }
+        &:target {
+            background-color: $sulu;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-8 {
+        background-color: $teaGreen;
+        &:hover {
+            background-color: $conifer;
+        }
+        &:active {
+            background-color: $teaGreen;
+        }
+        &:target {
+            background-color: $conifer;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-9 {
+        background-color: $chromeWhite;
+        &:hover {
+            background-color: $pastelGreen;
+        }
+        &:active {
+            background-color: $chromeWhite;
+        }
+        &:target {
+            background-color: $pastelGreen;
+            border: 2px solid $selectedBorder;
+        }
+    }
+
+    #btn-scale-10 {
+        background-color: $blueRomance;
+        &:hover {
+            background-color: $screaminGreen;
+        }
+        &:active {
+            background-color: $blueRomance;
+        }
+        &:target {
+            background-color: $screaminGreen;
+            border: 2px solid $selectedBorder;
+        }
+    }
+}
