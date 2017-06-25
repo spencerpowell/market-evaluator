@@ -2,9 +2,18 @@ var totalScore = 0;
 var add = function(a, b) {
     return a + b;
 }
-var currentSelection = 0;
-var promptIndex = 0;
-var numbersArray = [0]
+function getAdviceIndex(score) {
+    if (score < 50) {
+        return 0;
+    } else if (score < 76) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
+var selectedScore = 0;
+var pageIndex = 0;
+var savedScores = [0]
 var examples =
     [ "Rate each of the following ten factors on a scale of 0 to 10, where 0 is extremely unattractive and 10 is extremely attractive."
     , "Renting an old movie is typically low urgency; seeing the first showing of a new movie on opening night is high urgency, since it only happens once."
@@ -44,50 +53,91 @@ var titles =
     , "Up-Front Investment"
     , "Upsell Potential"
     , "Evergreen Potential"
+    , "Total Score: "
+    ]
+
+var adviceResults =
+    [ "Since your score is below 50, it is recommended that you move on to another idea.  There are probably better places to invest your energy and resources."
+    , "Since your score is between 50 and 75, it has the potential to pay the bills, but won't be a home run without a huge investment of energy and resources, so plan accordingly."
+    , "Since your score is above 75, you have a very promising idea - full speed ahead!"
     ]
 
 $(document).ready(function() {
     $('.chart-scale').hide();
     $('#prevBtn').hide();
-    $('#prompt').text(prompts[promptIndex]);
-    $('#example').text(examples[promptIndex]);
-    $('#title').text(titles[promptIndex]);
+    $('#prompt').text(prompts[pageIndex]);
+    $('#example').text(examples[pageIndex]);
+    $('#title').text(titles[pageIndex]);
 });
 
 $('#nextBtn').click(function() {
-    if (currentSelection == 0 && promptIndex > 0) {
+    // checking to see if user made a selection
+    if (selectedScore == 0 && pageIndex > 0 && pageIndex < 11) {
         alert("Must select a number");
         return;
     }
-    promptIndex += 1;
-    $('.chart-scale').show();
-    $('#prevBtn').show();
-    $('#nextBtn').text('Next');
-    $('#example').text(examples[promptIndex]);
-    $('#prompt').text(prompts[promptIndex]);
-    $('#title').text(titles[promptIndex]);
-    console.log(numbersArray);
-    numbersArray.push(currentSelection);
-    totalScore = numbersArray.reduce(add, 0);
+    pageIndex += 1;
+    $('#example').text(examples[pageIndex]);
+    $('#prompt').text(prompts[pageIndex]);
+    $('#title').text(titles[pageIndex]);
+    console.log(savedScores);
+    savedScores.push(selectedScore);
+    totalScore = savedScores.reduce(add, 0);
     console.log("Score: " + totalScore);
-    currentSelection = 0;
+    selectedScore = 0;
     console.log(totalScore);
+
+    if (pageIndex === 1) {
+        $('#prevBtn').show();
+        $('#nextBtn').text('Next');
+        $('.chart-scale').show();
+    }
+    if (pageIndex === 10) {
+        $('#nextBtn').text('Get Results');
+    }
+    if (pageIndex === 11) {
+        $('#title').text(titles[pageIndex] + totalScore);
+        $('#prompt').text(adviceResults[getAdviceIndex(totalScore)]);
+        $('#nextBtn').text('Start Over');
+        $('.chart-scale').hide();
+        $('#example').hide();
+    }
+    if (pageIndex === 12) {
+        // starting everything over
+        pageIndex = 0;
+        totalScore = 0;
+        savedScores = [0]
+        $('.chart-scale').hide();
+        $('#prevBtn').hide();
+        $('#nextBtn').text('Begin');
+        $('#example').show();
+        $('#example').text(examples[pageIndex]);
+        $('#prompt').text(prompts[pageIndex]);
+        $('#title').text(titles[pageIndex]);
+    }
 })
 
 $('#prevBtn').click(function() {
-    currentSelection = 0;
-    promptIndex -= 1;
-    console.log(numbersArray);
-    numbersArray.pop();
-    totalScore = numbersArray.reduce(add, 0);
+    selectedScore = 0;
+    pageIndex -= 1;
+    console.log(savedScores);
+    savedScores.pop();
+    totalScore = savedScores.reduce(add, 0);
     console.log("Score: " + totalScore);
-    $('#prompt').text(prompts[promptIndex]);
-    $('#example').text(examples[promptIndex]);
-    $('#title').text(titles[promptIndex]);
-    if (promptIndex === 0) {
+    $('#prompt').text(prompts[pageIndex]);
+    $('#example').text(examples[pageIndex]);
+    $('#title').text(titles[pageIndex]);
+    if (pageIndex === 0) {
         $('#prevBtn').hide();
         $('.chart-scale').hide();
         $('#nextBtn').text('Begin');
+    }
+    if (pageIndex === 9) {
+        $('#nextBtn').text('Next');
+    }
+    if (pageIndex === 10) {
+        $('#nextBtn').text('Get Results');
+        $('.chart-scale').show();
     }
     console.log(totalScore);
 })
@@ -95,6 +145,6 @@ $('#prevBtn').click(function() {
 $('.btn-scale').click(function() {
     var $selectedBtn = this;
     var text = $($selectedBtn).text();
-    currentSelection = parseInt(text);
-    console.log(currentSelection);
+    selectedScore = parseInt(text);
+    console.log(selectedScore);
 })
