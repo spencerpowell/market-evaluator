@@ -1,28 +1,28 @@
 html {
-  background-color: #242424;
+  background-color: #13535E;
   font: 100% Helvetica, sans-serif;
-  color: #d9d9d9; }
+  color: #ededed; }
   html #title {
     text-align: center;
     margin-bottom: 24px;
     margin-top: 24px; }
   html #prompt {
-    margin: 0 14% 14px 14%;
+    margin: 0 14% 14px;
     text-align: center; }
   html #example {
-    margin: 0 23% 24px 23%;
+    margin: 0 23% 24px;
     text-align: center;
     font-size: 14px; }
   html #navigation {
     padding-top: 18px;
     text-align: center; }
     html #navigation .btn {
-      padding: 7px 2% 7px 2%;
+      padding: 7px 2%;
       border-radius: 5px;
       margin-left: 6px;
       color: black;
       text-decoration: none;
-      background-color: #d9d9d9;
+      background-color: #ededed;
       border: 2px solid #A6A0A0; }
   html .chart-scale {
     text-align: center; }
@@ -38,7 +38,7 @@ html {
     width: 4%;
     margin-bottom: 12px;
     font-size: 16px;
-    border: 2px solid #242424;
+    border: 2px solid #13535E;
     border-radius: 50px;
     height: 24px;
     text-align: center;

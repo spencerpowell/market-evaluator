@@ -33,13 +33,13 @@ var prompts =
     , "How badly do people want or need this right now?"
     , "How many people are actively purchasing things like this?"
     , "What is the highest price a typical purchaser would be willing to spend for a solution?"
-    , "How easy is it to acquire a new customer? On average, how much will it cost to generate a sale, in both money and effort?"
-    , "How much would it cost to create and deliver the value offered, both in money and effort?"
-    , "How unique is your offer versus competing offerings in the market, and how easy is it for potential competitors to copy you?"
+    , "How easy is it to acquire a new customer?"
+    , "How easy would it be to create and deliver the value offered, both in money and effort?"
+    , "How unique is your offer versus competing offerings in the market, and how hard is it for potential competitors to copy you?"
     , "How quickly can you create something to sell?"
-    , "How much will you have to invest before you're ready to sell?"
+    , "How easy is the initial investment before you're ready to sell?"
     , "Are there related secondary offers that you could also present to purchasing customers?"
-    , "Once the initial offer has been created, how much additional work will you have to put into it in order to continue selling?"
+    , "Once the initial offer has been created, how easy will it be to maintain and continue selling?"
     ]
 var titles =
     [ "Ten Ways to Evaluate a Market"
@@ -70,7 +70,7 @@ $(document).ready(function() {
     $('#title').text(titles[pageIndex]);
 });
 
-$('#nextBtn').click(function() {
+$('#nextBtn').click(function(event) {
     // checking to see if user made a selection
     if (selectedScore == 0 && pageIndex > 0 && pageIndex < 11) {
         alert("Must select a number");
