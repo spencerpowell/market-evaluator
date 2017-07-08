@@ -48,24 +48,27 @@ html {
         text-align: center;
         margin-bottom: 24px;
         margin-top: 24px;
+        font-size: 4vw;
     }
 
     #prompt {
         margin: 0 14% 14px;
         text-align: center;
+        font-size: 2vw;
     }
 
     #example {
         margin: 0 23% 24px;
         text-align: center;
-        font-size: 14px;
+        font-size: 2vw;
     }
 
     #navigation {
         padding-top: 18px;
         text-align: center;
         .btn {
-            padding: 7px 2%;
+            padding: 1vw 5vw;
+            font-size: 3vw;
             border-radius: 5px;
             margin-left: 6px;
             color: black;
@@ -90,14 +93,14 @@ html {
 
     .btn-scale {
         display: inline-block;
-        width: 4%;
+        width: 9vh;
         margin-bottom: 12px;
-        font-size: 16px;
+        font-size: 3vh;
         border: 2px solid $unselectedBorder;
         border-radius: 50px;
-        height: 24px;
+        height: 5vh;
         text-align: center;
-        line-height: 24px;
+        line-height: 5vh;
         text-decoration: none;
     }
 
@@ -238,6 +241,46 @@ html {
         &:target {
             background-color: $screaminGreen;
             border: 2px solid $selectedBorder;
+        }
+    }
+
+    @media only screen and (max-width: 470px) {
+        #title {
+            font-size: 6vw;
+        }
+    }
+
+    @media only screen and (max-height: 500px) {
+        .btn-scale {
+            font-size: 18px;
+            width: 5%;
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+
+    @media only screen and (max-device-width: 420px) {
+        #title {
+            font-size: 6vw;
+        }
+        #navigation {
+            .btn {
+                padding: 1vh 5vh;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 770px) {
+        #prompt {
+            font-size: 16px;
+        }
+        #example {
+            font-size: 14px;
+        }
+        #navigation {
+            .btn {
+                font-size: 22px
+            }
         }
     }
 }

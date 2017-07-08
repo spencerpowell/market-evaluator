@@ -5,19 +5,22 @@ html {
   html #title {
     text-align: center;
     margin-bottom: 24px;
-    margin-top: 24px; }
+    margin-top: 24px;
+    font-size: 4vw; }
   html #prompt {
     margin: 0 14% 14px;
-    text-align: center; }
+    text-align: center;
+    font-size: 2vw; }
   html #example {
     margin: 0 23% 24px;
     text-align: center;
-    font-size: 14px; }
+    font-size: 2vw; }
   html #navigation {
     padding-top: 18px;
     text-align: center; }
     html #navigation .btn {
-      padding: 7px 2%;
+      padding: 1vw 5vw;
+      font-size: 3vw;
       border-radius: 5px;
       margin-left: 6px;
       color: black;
@@ -35,14 +38,14 @@ html {
     cursor: pointer; }
   html .btn-scale {
     display: inline-block;
-    width: 4%;
+    width: 9vh;
     margin-bottom: 12px;
-    font-size: 16px;
+    font-size: 3vh;
     border: 2px solid #13535E;
     border-radius: 50px;
-    height: 24px;
+    height: 5vh;
     text-align: center;
-    line-height: 24px;
+    line-height: 5vh;
     text-decoration: none; }
   html #btn-scale-1 {
     background-color: #FFECEB; }
@@ -134,5 +137,26 @@ html {
     html #btn-scale-10:target {
       background-color: #70F359;
       border: 2px solid #52A1FE; }
+  @media only screen and (max-width: 470px) {
+    html #title {
+      font-size: 6vw; } }
+  @media only screen and (max-height: 500px) {
+    html .btn-scale {
+      font-size: 18px;
+      width: 5%;
+      height: 28px;
+      line-height: 28px; } }
+  @media only screen and (max-device-width: 420px) {
+    html #title {
+      font-size: 6vw; }
+    html #navigation .btn {
+      padding: 1vh 5vh; } }
+  @media only screen and (max-width: 770px) {
+    html #prompt {
+      font-size: 16px; }
+    html #example {
+      font-size: 14px; }
+    html #navigation .btn {
+      font-size: 22px; } }
 
 /*# sourceMappingURL=myStyles.css.map */
